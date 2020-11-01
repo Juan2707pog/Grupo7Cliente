@@ -32,9 +32,16 @@ import math
 # definición de listas por comprensión.
 # ---------------------------------------------------------------------------
 
-def cuadrados(l):
-
-
+#Comprensión
+def cuadrados1(l):
+    a = [ a*a for a in l ]
+    return a
+#Bucle
+def cuadrados2(l):
+    a = []
+    for i in l:
+        a.append(i*i)
+    return a
 # -----------
 # EJERCICIO 2
 # -----------
