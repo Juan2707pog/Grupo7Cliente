@@ -5,16 +5,16 @@
 # Primera entrega
 # ===========================================================
 
-# GRUPO:
+# GRUPO: 7
 # INTEGRANTE 1:
 #   APELLIDOS, NOMBRE: Martínez López, Juan Jesus
 #   DNI: 30280475D
 # INTEGRANTE 2:
-#   APELLIDOS, NOMBRE:Reina Montes, Jose Antonio
-#   DNI:30263968Q
+#   APELLIDOS, NOMBRE: Reina Montes, Jose Antonio
+#   DNI: 30263968Q
 # INTEGRANTE 3:
-#   APELLIDOS, NOMBRE:Villar Méndez, Carlos Manuel
-#   DNI:30216661C
+#   APELLIDOS, NOMBRE: Villar Méndez, Carlos Manuel
+#   DNI: 30216661C
 
 # Escribir el código Python de las funciones que se piden en el
 # espacio que se indica en cada ejercicio.
