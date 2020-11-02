@@ -33,15 +33,17 @@ import math
 # ---------------------------------------------------------------------------
 
 #Comprensión
-def cuadrados1(l):
+def cuadrado_comprension(l):
     a = [ a*a for a in l ]
     return a
+
 #Bucle
-def cuadrados2(l):
+def cuadrado_bucle(l):
     a = []
     for i in l:
         a.append(i*i)
     return a
+    
 # -----------
 # EJERCICIO 2
 # -----------
@@ -65,7 +67,12 @@ def cuadrados2(l):
 # ---------------------------------------------------------------------------
 
 def vocales_consonantes(s):
-
+    vocales = "AEIOUÁÉÍÓÚaeiouáéíóú"
+    for i in s:
+        if vocales.find(i)==-1:
+            print('{0} es consonante'.format(i))
+        else:
+            print('{0} es vocal'.format(i))
 
 # -----------
 # EJERCICIO 3
@@ -82,7 +89,11 @@ def vocales_consonantes(s):
 # 120
 
 def suma_cuadrados(l):
-
+    a=0
+    for i in l:
+        if i % 2 == 0:
+            a += i*i        
+    return a
 
 # b) Dada una lista de números l=[a(1),...,a(n)], calcular el sumatorio de i=1
 #    hasta n de i*a(i).
