@@ -5,18 +5,6 @@
 # Primera entrega
 # ===========================================================
 
-<<<<<<< HEAD
-# GRUPO:
-# INTEGRANTE 1:
-#   APELLIDOS, NOMBRE:
-#   DNI:
-# INTEGRANTE 2:
-#   APELLIDOS, NOMBRE:
-#   DNI:
-# INTEGRANTE 3:
-#   APELLIDOS, NOMBRE:
-#   DNI:
-=======
 # GRUPO: 7
 # INTEGRANTE 1:
 #   APELLIDOS, NOMBRE: Martínez López, Juan Jesus
@@ -27,7 +15,6 @@
 # INTEGRANTE 3:
 #   APELLIDOS, NOMBRE: Villar Méndez, Carlos Manuel
 #   DNI: 30216661C
->>>>>>> 6c90d975a30e8ce2d7d60822cd8020eb85c3f0a6
 
 # Escribir el código Python de las funciones que se piden en el
 # espacio que se indica en cada ejercicio.
@@ -108,11 +95,25 @@
 # Los hijos de Jesus son Antonio y Ivan
 # Los hijos de Francisco son Jose y Rafael
 
-<<<<<<< HEAD
-
-=======
 def sustituye_patrones(frase, fichero):
->>>>>>> 6c90d975a30e8ce2d7d60822cd8020eb85c3f0a6
+    try:
+        document = open (fichero, 'r')
+        tests = [line.rstrip('\n').split(':') for line in document]
+        
+        for test in tests:
+            text = frase
+            for idx in range (len(test)):
+                text = text.replace(str(idx), test[idx])
+
+            print(text)
+            
+    except IOError:
+        print("EL documento no se encuentra")
+        
+    finally:
+        document.close()
+
+        sustituye_patrones("1 me dijo que 0 vendr�a con 2","sustituciones.txt")
 
 # Nótese que:
 # - Supondremos que en la frase de entrada las palabras se separan mediante un
@@ -195,7 +196,7 @@ def sustituye_patrones(frase, fichero):
 # - Las líneas de salida del ejemplo han sido impresas con la siguiente cadena
 #   de formateo:  "{0:>8} {1:<30} {2:<15} {3}"
 # ----------------------------------------------------------------------------------
-<<<<<<< HEAD
+
 ficheros = "nombres.txt"
 import re
 
@@ -276,9 +277,8 @@ def imprime_usuarios(file):
 
 
 imprime_usuarios(ficheros)
-=======
 
->>>>>>> 6c90d975a30e8ce2d7d60822cd8020eb85c3f0a6
+
 # -----------------------------------------------------------------------------
 # EJERCICIO 3) EL DECODIFICADOR
 
