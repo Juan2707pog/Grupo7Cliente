@@ -2,34 +2,34 @@
 # Desarrollo Web - Entorno Servidor
 # Ciclo Superior Desarrollo Web
 # Curso 2020-21
-# Primera práctica
+# Primera prÃ¡ctica
 # ===========================================================
 
-#   APELLIDOS, NOMBRE: Jos� Anotnio Reina Montes
+#   APELLIDOS, NOMBRE: José Antonio Reina Montes
 #   DNI: 30263968Q
 
 import math
 
-# Práctica 1: Introducción a Python
+# PrÃ¡ctica 1: IntroducciÃ³n a Python
 # =================================
 
-# En esta práctica veremos algunos ejercicios de Python, para ir
-# familiarizándonos con el lenguaje.
+# En esta prÃ¡ctica veremos algunos ejercicios de Python, para ir
+# familiarizÃ¡ndonos con el lenguaje.
 
 # -----------
 # EJERCICIO 1
 # -----------
 #
-# Escribir una funcion cuadrados(l) que recibiendo una secuencia l de números,
-# devuelve la lista de los cuadrados de esos números, en el mismo orden.
+# Escribir una funcion cuadrados(l) que recibiendo una secuencia l de nÃºmeros,
+# devuelve la lista de los cuadrados de esos nÃºmeros, en el mismo orden.
 
 # Por ejemplo:
 #
 # >>> cuadrados([4,1,5.2,3,8])
 # [16, 1, 27.040000000000003, 9, 64]
 
-# Hacer dos versiones: una usando un bucle explícito, y la otra mediante
-# definición de listas por comprensión.
+# Hacer dos versiones: una usando un bucle explÃ­cito, y la otra mediante
+# definiciÃ³n de listas por comprensiÃ³n.
 # ---------------------------------------------------------------------------
 
 def cuadrados1(l):
@@ -47,7 +47,7 @@ def cuadrados2(l):
 # EJERCICIO 2
 # -----------
 # Definir una funcion vocales_consonantes(s), que reciba una cadena de
-# caracteres s (de letras mayúsculas) y escribe por pantalla, una a una, si
+# caracteres s (de letras mayÃºsculas) y escribe por pantalla, una a una, si
 # sus letras son vocales o  consonantes.
 # Ejemplo:
 # >>> vocales_consonantes("INTELIGENCIA")
@@ -79,11 +79,11 @@ def vocales_consonantes(s):
 # EJERCICIO 3
 # -----------
 
-# Usando como técnica principal la definición de secuancias por comprensión,
+# Usando como tÃ©cnica principal la definiciÃ³n de secuancias por comprensiÃ³n,
 # definir las siguientes funciones:
 
-# a) Dada una lista de números naturales, la suma de los cuadrados de los
-#    números pares de la lista.
+# a) Dada una lista de nÃºmeros naturales, la suma de los cuadrados de los
+#    nÃºmeros pares de la lista.
 
 # Ejemplo:
 # >>> suma_cuadrados([9,4,2,6,8,1])
@@ -97,12 +97,12 @@ def suma_cuadrados(l):
     return x
 
 
-# b) Dada una lista de números l=[a(1),...,a(n)], calcular el sumatorio de i=1
+# b) Dada una lista de nÃºmeros l=[a(1),...,a(n)], calcular el sumatorio de i=1
 #    hasta n de i*a(i).
 
 # Ejemplo:
 
-# >>> suma_fórmula([2,4,6,8,10])
+# >>> suma_fÃ³rmula([2,4,6,8,10])
 # 110
 
 def suma_formula(l):
@@ -114,8 +114,8 @@ def suma_formula(l):
     return y
 
 
-# c) Dados dos listas numéricas de la misma longitud, representado dos puntos
-#    n-dimensionales, calcular la distancia euclídea entre ellos.
+# c) Dados dos listas numÃ©ricas de la misma longitud, representado dos puntos
+#    n-dimensionales, calcular la distancia euclÃ­dea entre ellos.
 
 # Ejemplo:
 
@@ -123,7 +123,7 @@ def suma_formula(l):
 # 2.449489742783178
 
 def distancia(l0,l1):
-    return math.sqrt(sum([(x-y)**2 for x,y in zip(l0,l1)])) #al tener el mismo tama�o unimos los datos en el zip
+    return math.sqrt(sum([(x-y)**2 for x,y in zip(l0,l1)])) #al tener el mismo tamaño unimos los datos en el zip
 
 # d) Dada una lista y una funcion de un argumento, devolver la lista de los
 #    resultados de aplicar la funcion a cada elelmento de la lista.
@@ -139,7 +139,7 @@ def map_mio(f,l):
 
 # e) Dada un par de listas (de la misma longitud) y una funcion de dos
 #    argumentos, devolver la lista de los resultados de aplicar la funcion a
-#    cada par de elementos que ocupan la misma posición en las listas de
+#    cada par de elementos que ocupan la misma posiciÃ³n en las listas de
 #    entrada.
 
 # Ejemplo:
@@ -150,10 +150,10 @@ def map2_mio(f,l0,l1):
     if(len(l0) == len(l1)):
         return [f(x,y) for x,y in zip(l0,l1)]
     else:
-        return 'No tiene el mismo tama�o'
+        return 'No tiene el mismo tamaño'
 
 
-# f) Dada una lista de números, contar el número de elementos que sean múltiplos
+# f) Dada una lista de nÃºmeros, contar el nÃºmero de elementos que sean mÃºltiplos
 #    de tres y distintos de cero.
 
 # Ejemplo:
@@ -168,7 +168,7 @@ def m3_no_nulos(l):
 #return l1.len()
 
 
-# f) Dadas dos listas de la misma longitud, contar el número de posiciones en
+# f) Dadas dos listas de la misma longitud, contar el nÃºmero de posiciones en
 #    las que coinciden los elementos de ambas listas.
 
 # Ejemplo:
@@ -196,16 +196,16 @@ def dic_posiciones_coincidentes(l0,l1):
     if (len(l0) == len(l1)):
         return {x:l0[x] for x in range(len(l0)) if l0[x] == l1[x]}
     else:
-        return 'El tama�o de las listas no es el mismo'
+        return 'El tamaño de las listas no es el mismo'
 
 
 # -----------
 # EJERCICIO 4
 # -----------
-# Un número es perfecto si es la suma de todos sus divisores (excepto él
-# mismo). Definir una función filtra_perfectos(n,m,p) que imprime por pantalla
-# todos los números perfectos entre n y m que cumplen la condición p. Se pide
-# también que se indiquen los divisores de cada número perfecto que se
+# Un nÃºmero es perfecto si es la suma de todos sus divisores (excepto Ã©l
+# mismo). Definir una funciÃ³n filtra_perfectos(n,m,p) que imprime por pantalla
+# todos los nÃºmeros perfectos entre n y m que cumplen la condiciÃ³n p. Se pide
+# tambiÃ©n que se indiquen los divisores de cada nÃºmero perfecto que se
 # imprima.
 
 # Ejemplo:
@@ -239,7 +239,7 @@ def filtra_perfectos(a,b,f):
 # -----------
 #
 # Supongamos que recibimos un diccionario cuyas claves son cadenas de
-# caracteres de longitud uno y los valores asociados son números enteros
+# caracteres de longitud uno y los valores asociados son nÃºmeros enteros
 # entre 0 y 50.
 # Definir una funcion histograma_horizontal(d), que recibiendo un diccionario
 # de ese tipo, escribe un histograma de barras horizontales asociado,
@@ -260,7 +260,7 @@ def filtra_perfectos(a,b,f):
 # j: **
 #
 # Nota: imprimir las barras, de arriba a abajo, en el orden que determina la
-#         función "sorted" sobre las claves
+#         funciÃ³n "sorted" sobre las claves
 # ---------------------------------------------------------------------------
 
 d1={"a":5,"b":10,"c":12,"d":11,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
@@ -310,12 +310,12 @@ def histograma_horizontal(d1):
 # a b c d e f g h i j
 
 # Nota: imprimir las barras, de izquierda a derecha, en el orden que determina la
-#         función "sorted" sobre las claves
+#         funciÃ³n "sorted" sobre las claves
 # ---------------------------------------------------------------------------
 
 d2={"a":5,"b":7,"c":9,"d":12,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 
-#Buscamos el máximo de todos para saber por cual empezar.
+#Buscamos el mÃ¡ximo de todos para saber por cual empezar.
 
 def histograma_vertical(d2):
     
