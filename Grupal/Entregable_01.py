@@ -339,7 +339,6 @@ for i in range(3):
 
 
 print('\n------------------------------¡Bienvenido al decodificador!------------------------------')
-print(codigo)
 print ("\nTienes que adivinar un numero de", 3, "cifras distintas")
 propuesta = input("¿Cual es tú apuesta?: ")
 
