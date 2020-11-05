@@ -33,15 +33,17 @@ import math
 # ---------------------------------------------------------------------------
 
 #Comprensión
-def cuadrados1(l):
+def cuadrado_comprension(l):
     a = [ a*a for a in l ]
     return a
+
 #Bucle
-def cuadrados2(l):
+def cuadrado_bucle(l):
     a = []
     for i in l:
         a.append(i*i)
     return a
+    
 # -----------
 # EJERCICIO 2
 # -----------
@@ -65,7 +67,12 @@ def cuadrados2(l):
 # ---------------------------------------------------------------------------
 
 def vocales_consonantes(s):
-
+    vocales = "AEIOUÁÉÍÓÚaeiouáéíóú"
+    for i in s:
+        if vocales.find(i)==-1:
+            print('{0} es consonante'.format(i))
+        else:
+            print('{0} es vocal'.format(i))
 
 # -----------
 # EJERCICIO 3
@@ -82,7 +89,11 @@ def vocales_consonantes(s):
 # 120
 
 def suma_cuadrados(l):
-
+    a=0
+    for i in l:
+        if i % 2 == 0:
+            a += i*i        
+    return a
 
 # b) Dada una lista de números l=[a(1),...,a(n)], calcular el sumatorio de i=1
 #    hasta n de i*a(i).
@@ -93,7 +104,12 @@ def suma_cuadrados(l):
 # 110
 
 def suma_formula(l):
-
+    n = len(l)
+    t = 0
+    l1 = [(i+1)*l[i] for i in range(n)]
+    for k in l1:
+        t+=k
+    return t
 
 # c) Dados dos listas numéricas de la misma longitud, representado dos puntos
 #    n-dimensionales, calcular la distancia euclídea entre ellos.
@@ -103,8 +119,16 @@ def suma_formula(l):
 # >>> distancia([3,1,2],[1,2,1])
 # 2.449489742783178
 
-def distancia(l0,l1):
+def sqrt(n):
+    return n**(1/2.0)
 
+def distancia(l1,l2):
+    n  = len(l1)
+    l3 = [(l1[i]-l2[i])**2 for i in range(n)]
+    t = 0
+    for i in range(n):
+        t+=l3[i]
+    return sqrt(t)
 
 # d) Dada una lista y una funcion de un argumento, devolver la lista de los
 #    resultados de aplicar la funcion a cada elelmento de la lista.
@@ -115,6 +139,7 @@ def distancia(l0,l1):
 # [2, 3, 4, 1]
 
 def map_mio(f,l):
+    return [f(i) for i in l]
 
 
 # e) Dada un par de listas (de la misma longitud) y una funcion de dos
@@ -127,6 +152,7 @@ def map_mio(f,l):
 # [6, 4, 10, 13]
 
 def map2_mio(f,l0,l1):
+    return [f(l0[i], l1[i]) for i in range(len(l0))]
 
 
 # f) Dada una lista de números, contar el número de elementos que sean múltiplos
@@ -138,7 +164,11 @@ def map2_mio(f,l0,l1):
 # 3
 
 def m3_no_nulos(l):
-
+    n = 0
+    for x in l:
+        if(x%3==0 or x!=0):
+            n+1
+    return  n
 
 # f) Dadas dos listas de la misma longitud, contar el número de posiciones en
 #    las que coinciden los elementos de ambas listas.
@@ -149,7 +179,9 @@ def m3_no_nulos(l):
 # 3
 
 def cuenta_coincidentes(l0,l1):
-
+    n = len(l0)
+    t = sum([ 1 for i in range(n) if l0[i] == l1[i] ])
+    return t
 
 # g) Dadas dos listas de la misma longitud, devolver un diccionario que tiene
 # como claves las posiciones  en las que coinciden los elementos de ambas
@@ -163,7 +195,9 @@ def cuenta_coincidentes(l0,l1):
 # {1: 8, 2: 1, 3: 2, 4: 1}
 
 def dic_posiciones_coincidentes(l0,l1):
-
+    n = len(l0)
+    l2 = {i:l0[i] for i in range(n) if l0[i]==l1[i]}
+    return l2
 
 # -----------
 # EJERCICIO 4
