@@ -7,71 +7,71 @@
 
 # GRUPO: 7
 # INTEGRANTE 1:
-#   APELLIDOS, NOMBRE: Martínez López, Juan Jesus
+#   APELLIDOS, NOMBRE: MartÃ­nez LÃ³pez, Juan Jesus
 #   DNI: 30280475D
 # INTEGRANTE 2:
 #   APELLIDOS, NOMBRE: Reina Montes, Jose Antonio
 #   DNI: 30263968Q
 # INTEGRANTE 3:
-#   APELLIDOS, NOMBRE: Villar Méndez, Carlos Manuel
+#   APELLIDOS, NOMBRE: Villar MÃ©ndez, Carlos Manuel
 #   DNI: 30216661C
 
-# Escribir el código Python de las funciones que se piden en el
+# Escribir el cÃ³digo Python de las funciones que se piden en el
 # espacio que se indica en cada ejercicio.
 
 # IMPORTANTE: NO CAMBIAR EL NOMBRE NI A ESTE ARCHIVO NI A LAS FUNCIONES QUE SE
 # PIDEN (aquellas funciones con un nombre distinto al que se pide en el
-# ejercicio NO se corregirán).
+# ejercicio NO se corregirÃ¡n).
 
 # ESTE ENTREGABLE SUPONEN 3 PUNTOS DE LA NOTA DEL TRIMESTRE PARA TODO EL GRUPO
 
 # *****************************************************************************
-# HONESTIDAD ACADÉMICA Y COPIAS: la realización de estos ejercicios es un
+# HONESTIDAD ACADÃ‰MICA Y COPIAS: la realizaciÃ³n de estos ejercicios es un
 # trabajo grupal, por lo que deben completarse por cada grupo de estudiantes.
-# La discusión y el intercambio de información de carácter general con los
-# compañeros se permite (e incluso se recomienda), pero NO AL NIVEL DE CÓDIGO.
-# Igualmente el remitir código de terceros, obtenido a través de la red o
-# cualquier otro medio, se considerará plagio.
+# La discusiÃ³n y el intercambio de informaciÃ³n de carÃ¡cter general con los
+# compaÃ±eros se permite (e incluso se recomienda), pero NO AL NIVEL DE CÃ“DIGO.
+# Igualmente el remitir cÃ³digo de terceros, obtenido a travÃ©s de la red o
+# cualquier otro medio, se considerarÃ¡ plagio.
 
-# Cualquier plagio o compartición de código que se detecte significará
-# automáticamente la calificación de CERO EN LA ASIGNATURA para TODOS los
-# alumnos involucrados. ¡Aseguraros!
+# Cualquier plagio o comparticiÃ³n de cÃ³digo que se detecte significarÃ¡
+# automÃ¡ticamente la calificaciÃ³n de CERO EN LA ASIGNATURA para TODOS los
+# alumnos involucrados. Â¡Aseguraros!
 # *****************************************************************************
 
 # -----------------------------------------------------------------------------
 # EJERCICIO 1)
 
 # Supongamos que tenemos una cadena de caracteres con una frase, en la que
-# pueden aparecer dígitos (entre 0 y 9), que hacen el papel de "comodines" que
+# pueden aparecer dÃ­gitos (entre 0 y 9), que hacen el papel de "comodines" que
 # han de ser sustituidos por palabras concretas. Por ejemplo, si tenemos la
 # siguiente frase:
 
-# "1 me dijo que 0 vendría con 2"
+# "1 me dijo que 0 vendrÃ­a con 2"
 
-# podemos pensar que 0, 1 y 2 hacen el papel de símbolos que pueden ser
+# podemos pensar que 0, 1 y 2 hacen el papel de sÃ­mbolos que pueden ser
 # sustituidos por palabras concretas. Por ejemplo, sustituyendo 0 por Miguel,
-# 1 por Juan y 2 por Pedro, tendríamos la frase:
+# 1 por Juan y 2 por Pedro, tendrÃ­amos la frase:
 
-# "Juan me dijo que Miguel vendría con Pedro"
+# "Juan me dijo que Miguel vendrÃ­a con Pedro"
 
 # Para expresar las sustituciones a realizar, lo haremos mediante una
-# secuencia p0:p1:p2:... de palabras separadas por el carácter ":", en la que
-# la palabra de la posición i-ésima es la que hay que usar para sustituir al dígito i
+# secuencia p0:p1:p2:... de palabras separadas por el carÃ¡cter ":", en la que
+# la palabra de la posiciÃ³n i-Ã©sima es la que hay que usar para sustituir al dÃ­gito i
 #
-# Por ejemplo, la sustitución del ejemplo anterior la expresaríamos por
+# Por ejemplo, la sustituciÃ³n del ejemplo anterior la expresarÃ­amos por
 # Miguel:Juan:Pedro
 # (es decir, 0 por Miguel, 1 por Juan y 2 por Pedro).
 
 # Supongamos que tenemos listadas en un fichero de texto una serie de
-# sustituciones en el formato descrito, una por cada línea del fichero.
+# sustituciones en el formato descrito, una por cada lÃ­nea del fichero.
 
-# Se pide definir una función sustituye_patrones(frase,fichero) que
-# recibiendo como entrada una frase y un fichero en el que están listadas una
-# serie de sustituciones (una por línea), escribe por pantalla las frases que
-# se obtienen al aplicar cada sustitución del fichero a la frase.
+# Se pide definir una funciÃ³n sustituye_patrones(frase,fichero) que
+# recibiendo como entrada una frase y un fichero en el que estÃ¡n listadas una
+# serie de sustituciones (una por lÃ­nea), escribe por pantalla las frases que
+# se obtienen al aplicar cada sustituciÃ³n del fichero a la frase.
 
 # Por ejemplo, si tenemos un fichero sustituciones.txt con las siguientes
-# líneas:
+# lÃ­neas:
 
 # Miguel:Juan:Pedro
 # Luis:Antonio:Maria
@@ -79,14 +79,14 @@
 # Ivan:Jesus:Antonio:Luis
 # Rafael:Francisco:Jose
 
-# entonces, el comportamiento de la función debe ser el siguiente:
+# entonces, el comportamiento de la funciÃ³n debe ser el siguiente:
 
-# >>> sustituye_patrones("1 me dijo que 0 vendría con 2","sustituciones.txt")
-# Juan me dijo que Miguel vendría con Pedro
-# Antonio me dijo que Luis vendría con Maria
-# Eva me dijo que Marcos vendría con 2
-# Jesus me dijo que Ivan vendría con Antonio
-# Francisco me dijo que Rafael vendría con Jose
+# >>> sustituye_patrones("1 me dijo que 0 vendrÃ­a con 2","sustituciones.txt")
+# Juan me dijo que Miguel vendrÃ­a con Pedro
+# Antonio me dijo que Luis vendrÃ­a con Maria
+# Eva me dijo que Marcos vendrÃ­a con 2
+# Jesus me dijo que Ivan vendrÃ­a con Antonio
+# Francisco me dijo que Rafael vendrÃ­a con Jose
 
 # >>> sustituye_patrones("Los hijos de 1 son 2 y 0","sustituciones.txt")
 # Los hijos de Juan son Pedro y Miguel
@@ -113,35 +113,35 @@ def sustituye_patrones(frase, fichero):
     finally:
         document.close()
 
-        sustituye_patrones("1 me dijo que 0 vendr�a con 2","sustituciones.txt")
+sustituye_patrones("1 me dijo que 0 vendría con 2","sustituciones.txt")
 
-# Nótese que:
+# NÃ³tese que:
 # - Supondremos que en la frase de entrada las palabras se separan mediante un
-#   único espacio, y que los únicos números que aparecen son dígitos de 0 a 9.
-# - No todas las sustituciones indican sustitución para todos los dígitos que
-#   aparezcan en la frase. Por ejemplo, la tercera línea del ejemplo, no
-#   indica sustitución para 2, y en ese caso se deja sin sustituir.
-# - Asimismo, puede que la sustitución indique sustitución para más dígitos de
+#   Ãºnico espacio, y que los Ãºnicos nÃºmeros que aparecen son dÃ­gitos de 0 a 9.
+# - No todas las sustituciones indican sustituciÃ³n para todos los dÃ­gitos que
+#   aparezcan en la frase. Por ejemplo, la tercera lÃ­nea del ejemplo, no
+#   indica sustituciÃ³n para 2, y en ese caso se deja sin sustituir.
+# - Asimismo, puede que la sustituciÃ³n indique sustituciÃ³n para mÃ¡s dÃ­gitos de
 #   los que aparece en la frase.
 
-# INDICACIÓN: pueden ser útiles los métodos split y join de la clase string.
+# INDICACIÃ“N: pueden ser Ãºtiles los mÃ©todos split y join de la clase string.
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
 # EJERCICIO 2)
 
 # Supongamos que la ETSII ha comprado un nuevo ordenador que vamos a utilizar
-# como servidor para las prácticas de la asignatura, y que necesitamos dar de
+# como servidor para las prÃ¡cticas de la asignatura, y que necesitamos dar de
 # alta a los alumnos como usuarios de ese servidor. Para ello, hemos de
-# generar automáticamente un nombre de usuario para cada alumno, en base a su
+# generar automÃ¡ticamente un nombre de usuario para cada alumno, en base a su
 # nombre y apellidos.
 
-# En este ejercicio se pide una función imprime_usuarios(fichero), que
+# En este ejercicio se pide una funciÃ³n imprime_usuarios(fichero), que
 # recibiendo como entrada un fichero con los datos de cada usuario, imprime
-# por pantalla un listado de los mismos en orden alfabético de apellidos,
-# junto con el nombre de usuario automáticamente generado.
+# por pantalla un listado de los mismos en orden alfabÃ©tico de apellidos,
+# junto con el nombre de usuario automÃ¡ticamente generado.
 
-# Por ejemplo, aplicando la función imprime_usuarios al fichero nombres.txt
+# Por ejemplo, aplicando la funciÃ³n imprime_usuarios al fichero nombres.txt
 # que se proporciona, debe de mostrase el siguiente resultado:
 
 # >>> imprime_usuarios("nombres.txt")
@@ -170,7 +170,7 @@ def sustituye_patrones(frase, fichero):
 # 21334456 Torres Chacon                  Eduardo         etorcha
 
 
-# El fichero de entrada es una secuencia de líneas de la forma:
+# El fichero de entrada es una secuencia de lÃ­neas de la forma:
 # DNI:Nombre1:Nombre2:Apellido1:Apellido2
 # o bien (si el alumno no tuviera nombre compuesto):
 # DNI:Nombre::Apellido1:Apellido2
@@ -179,21 +179,21 @@ def sustituye_patrones(frase, fichero):
 # se ha de generar mediante la siguiente regla: inicial del primer nombre,
 # inicial segundo nombre (si tuviera), las tres primeras letras del primer
 # apellido y las tres primeras letras del segundo apellido, todo en
-# minúsculas. Si con esta regla hay varios alumnos a los que les corresponde
-# el mismo nombre de usuario, se distinguen mediante sucesivos índices
-# numéricos que se añaden al final.
+# minÃºsculas. Si con esta regla hay varios alumnos a los que les corresponde
+# el mismo nombre de usuario, se distinguen mediante sucesivos Ã­ndices
+# numÃ©ricos que se aÃ±aden al final.
 
-# Nótese que si una línea del fichero no tiene el formato indicado, se ha de
+# NÃ³tese que si una lÃ­nea del fichero no tiene el formato indicado, se ha de
 # ignorar.
 
 # INDICACIONES:
-# - Pueden ser útiles los métodos split y lower de la clase string
-# - Al leer cada línea del fichero de entrada, el último carácter será el
-#   salto de línea "\n". Si tenemos una cadena l que tiene ese carácter de fin
-#   de línea, entonces l[:-1] es la misma línea pero sin ese carácter.
-# - Para ordenar las líneas por orden alfabético, puede ser util el método de
+# - Pueden ser Ãºtiles los mÃ©todos split y lower de la clase string
+# - Al leer cada lÃ­nea del fichero de entrada, el Ãºltimo carÃ¡cter serÃ¡ el
+#   salto de lÃ­nea "\n". Si tenemos una cadena l que tiene ese carÃ¡cter de fin
+#   de lÃ­nea, entonces l[:-1] es la misma lÃ­nea pero sin ese carÃ¡cter.
+# - Para ordenar las lÃ­neas por orden alfabÃ©tico, puede ser util el mÃ©todo de
 #   sort de la clase listas, y usar el parametro "key=...".
-# - Las líneas de salida del ejemplo han sido impresas con la siguiente cadena
+# - Las lÃ­neas de salida del ejemplo han sido impresas con la siguiente cadena
 #   de formateo:  "{0:>8} {1:<30} {2:<15} {3}"
 # ----------------------------------------------------------------------------------
 
@@ -284,39 +284,39 @@ imprime_usuarios(ficheros)
 
 # Se tiene que realizar un juego con las siguientes instrucciones:
 
-# 1. El programa decidirá 3 dígitos no repetidos. Ej: 123
-# 2. El jugador deberá indicar 3 dígitos mediante la consola.
-# 3. El programa nos devolverá una pista de las siguientes:
+# 1. El programa decidirÃ¡ 3 dÃ­gitos no repetidos. Ej: 123
+# 2. El jugador deberÃ¡ indicar 3 dÃ­gitos mediante la consola.
+# 3. El programa nos devolverÃ¡ una pista de las siguientes:
 #
-#     ¡Casi!: El jugador acertó los tres números, pero en el orden incorrecto.
-#     Cerca: El jugador acertó un número en la posición correcta.
-#     Nada: El jugador no acertó el resto de casos.
+#     Â¡Casi!: El jugador acertÃ³ los tres nÃºmeros, pero en el orden incorrecto.
+#     Cerca: El jugador acertÃ³ un nÃºmero en la posiciÃ³n correcta.
+#     Nada: El jugador no acertÃ³ el resto de casos.
 #
-# 4. Basándonos en estas pruebas, el jugador tendrá que conseguir hacer que
-#    coincidan los 3 dígitos en la misma posición, el programa responderá y
-#    terminará con:
-#                    ¡Enhorabuena, ahora eres un hacker!
+# 4. BasÃ¡ndonos en estas pruebas, el jugador tendrÃ¡ que conseguir hacer que
+#    coincidan los 3 dÃ­gitos en la misma posiciÃ³n, el programa responderÃ¡ y
+#    terminarÃ¡ con:
+#                    Â¡Enhorabuena, ahora eres un hacker!
 
-# Por ejemplo, si intentamos jugar con la máquina y esta tiene almacenado el
-# número 479, esto sería un ejemplo de una partida:
+# Por ejemplo, si intentamos jugar con la mÃ¡quina y esta tiene almacenado el
+# nÃºmero 479, esto serÃ­a un ejemplo de una partida:
 
 # >>> juego_decodificador()
-# ¡Bienvenido al decodificador!
-# ¿Cuál es tú apuesta?: 459
-# Cerca, ¡sigue así!
-# ¿Cuál es tú apuesta? 345
-# Nada, inténtalo de nuevo.
-# ¿Cuál es tú apuesta? 947
-# ¡Casi!, reordénalos.
-# ¿Cuál es tú apuesta? 479
-# ¡Enhorabuena, ahora eres un hacker!
+# Â¡Bienvenido al decodificador!
+# Â¿CuÃ¡l es tÃº apuesta?: 459
+# Cerca, Â¡sigue asÃ­!
+# Â¿CuÃ¡l es tÃº apuesta? 345
+# Nada, intÃ©ntalo de nuevo.
+# Â¿CuÃ¡l es tÃº apuesta? 947
+# Â¡Casi!, reordÃ©nalos.
+# Â¿CuÃ¡l es tÃº apuesta? 479
+# Â¡Enhorabuena, ahora eres un hacker!
 # >>>
 
 # Es importante que el programa termine en esa sentencia.
 
 # Notas:
-# Hay que tener en cuenta la división de las tareas para completar este tiempo
-# de tareas que podrían tener una complejidad elevada. ¡Divide y vencerás!
+# Hay que tener en cuenta la divisiÃ³n de las tareas para completar este tiempo
+# de tareas que podrÃ­an tener una complejidad elevada. Â¡Divide y vencerÃ¡s!
 #
 # Hay algunas instrucciones que pueden ser de utilidad para desarrollar este
 # sencillo juego:
@@ -325,5 +325,5 @@ import random
 digits = list(range(10))
 random.shuffle(digits)
 print(digits[:3])
-guess = input("¿Cuál es tú apuesta?: ")
+guess = input("Â¿CuÃ¡l es tÃº apuesta?: ")
 print(guess)
