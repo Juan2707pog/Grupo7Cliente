@@ -318,26 +318,26 @@ imprime_usuarios(ficheros)
 import random
 
 
-digitos = ('0','1','2','3','4','5','6','7','8','9')
+digitos = ('0','1','2','3','4','5','6','7','8','9') #para que el codigo que toque solo tenga de rango del 0 al 9. Tambien se puede hacer con un list(range(10))
 
 
-codigo = ''
+codigo = '' #con esto hacemos que toque un codigo
 
-for i in range(3):
+for i in range(3): #para que tenga un rango de solo 3 digitos.
     candidato = random.choice(digitos)
-
-    while candidato in codigo:
+                                            
+    while candidato in codigo:  # para que no toque digitos no repetidos
         candidato = random.choice(digitos)
     codigo = codigo + candidato
 
 
-print('\n------------------------------¡Bienvenido al decodificador!------------------------------')
-print ("\nTienes que adivinar un numero de", 3, "cifras distintas")
-propuesta = input("¿Cual es tú apuesta?: ")
+print('\n------------------------------¡Bienvenido al decodificador!------------------------------\n')
+              
+propuesta = input("¿Cual es tú apuesta?: ") #este input es para que nosotros pongamos el codigo
 
 
 intentos = 1
-while propuesta != codigo:
+while propuesta != codigo: #para ayudar un poco con los aciertos y coincidencias
     intentos = intentos + 1
     aciertos = 0
     coincidencias = 0
