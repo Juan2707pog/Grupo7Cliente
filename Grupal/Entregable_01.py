@@ -323,8 +323,48 @@ imprime_usuarios(ficheros)
 # sencillo juego:
 
 import random
-digits = list(range(10))
-random.shuffle(digits)
-print(digits[:3])
-guess = input("Â¿CuÃ¡l es tÃº apuesta?: ")
-print(guess)
+
+
+digitos = ('0','1','2','3','4','5','6','7','8','9')
+
+
+codigo = ''
+
+for i in range(3):
+    candidato = random.choice(digitos)
+
+    while candidato in codigo:
+        candidato = random.choice(digitos)
+    codigo = codigo + candidato
+
+
+print('\n------------------------------¡Bienvenido al decodificador!------------------------------')
+print(codigo)
+print ("\nTienes que adivinar un numero de", 3, "cifras distintas")
+propuesta = input("¿Cual es tú apuesta?: ")
+
+
+intentos = 1
+while propuesta != codigo:
+    intentos = intentos + 1
+    aciertos = 0
+    coincidencias = 0
+
+
+    for i in range(3):
+        if propuesta[i] == codigo[i]:
+            aciertos = aciertos + 1
+        elif propuesta[i] in codigo:
+            coincidencias = coincidencias + 1
+
+    if coincidencias == 3:
+        print(" ¡Casi!, acertaste los 3 numeros, pero tienes que ordenarlos.")
+    elif coincidencias == 2:
+        print(" ¡Cerca!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta, dentro de poco seras hacker")
+    elif coincidencias == 1:
+        print(" ¡Cerca!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta, dentro de poco seras hacker")
+    elif coincidencias == 0:
+        print(" ¡Nada!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta hazlo de nuevo")
+    propuesta = input("\n¿Cual es tú apuesta?: ")
+
+print ("¡Enhorabuena, ahora eres un hacker! ")
