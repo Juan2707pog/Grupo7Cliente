@@ -226,7 +226,7 @@ def divisores(x):
 def filtra_perfectos(n,m,p):
     l1 = [a for a in range(n,m) if p(a)== True and sum(divisores(a)) == a]
     for i in l1:
-        print("El {0} es perfecto y sus divisores son {1}".format(i,divisores(i))
+        print("El {0} es perfecto y sus divisores son {1}".format(i,divisores(i)))
 
 ##    for x in range(a,b+1):
 ##        if sum(multiplos(x)) == x:
@@ -265,7 +265,7 @@ d1={"a":5,"b":10,"c":12,"d":11,"e":15,"f":20,"g":15,"h":9,"i":7,"j":2}
 
 def histograma_horizontal(d1):
     for x,y in sorted(d1.items()):
-        print( x , ": ", y * '*'
+        print( x , ": ", y * '*')
 
 # -----------
 # EJERCICIO 6
