@@ -96,25 +96,18 @@
 # Los hijos de Francisco son Jose y Rafael
 
 def sustituye_patrones(frase, fichero):
-    try:
-        document = open (fichero, 'r')
-        tests = [line.rstrip('\n').split(':') for line in document]
+    document = open (fichero, 'a')  #abre el archivo
+    tests = [line.rstrip('\n').split(':') for line in document] #el rstrip devuelve una nueva cadena con los espacios en blanco eliminados
         
-        for test in tests:
+        for test in tests:  #edita el texto
             text = frase
-            for idx in range (len(test)):
-                text = text.replace(str(idx), test[idx])
+            for idx in range (len(test)):   #introduzca un índice
+                text = text.replace(str(idx), test[idx]) #como queremos q aparezca que reemplace el texto como arrays con separtaciones, comas...
 
-            print(text)
-            
-    except IOError:
-        print("EL documento no se encuentra")
+            print(text)      #imprime
+    
         
-    finally:
-        document.close()
-
-        
-sustituye_patrones("1 me dijo que 0 vendría con 2","sustituciones.txt")
+sustituye_patrones("1 me dijo que 0 vendría con 2","sustituciones.txt") 
 
 # NÃ³tese que:
 # - Supondremos que en la frase de entrada las palabras se separan mediante un
