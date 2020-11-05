@@ -271,7 +271,18 @@ def imprime_usuarios(file):
 
 
 imprime_usuarios(ficheros)
-
+#############
+              ###mensaje = "hola.txt"
+#with open (mensaje,"r") as f:
+ #   mensaje = f.read()
+  #  espacio = [i for i in mensaje.split(":")]
+   # espacio = "  ".join(espacio)
+    #espacio = espacio.split("\n")
+    #for x in espacio:
+     #       print(x)
+              #
+              #
+              ##
 
 # -----------------------------------------------------------------------------
 # EJERCICIO 3) EL DECODIFICADOR
