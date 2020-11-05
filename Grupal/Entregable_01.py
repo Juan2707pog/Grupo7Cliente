@@ -113,6 +113,7 @@ def sustituye_patrones(frase, fichero):
     finally:
         document.close()
 
+        
 sustituye_patrones("1 me dijo que 0 vendría con 2","sustituciones.txt")
 
 # NÃ³tese que:
