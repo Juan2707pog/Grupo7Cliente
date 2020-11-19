@@ -97,15 +97,15 @@
 
 def sustituye_patrones(frase, fichero):
     try:
-        document = open (fichero, 'r')
-        tests = [line.rstrip('\n').split(':') for line in document]
+        document = open (fichero, 'r') #abre el archivo
+        tests = [line.rstrip('\n').split(':') for line in document] #el rstrip devuelve una nueva cadena con los espacios en blanco eliminados
         
-        for test in tests:
+        for test in tests: #edita el texto
             text = frase
-            for idx in range (len(test)):
-                text = text.replace(str(idx), test[idx])
+            for idx in range (len(test)): #introduzca un índice
+                text = text.replace(str(idx), test[idx]) #como queremos q aparezca que reemplace el texto como arrays con separtaciones, comas...
 
-            print(text)
+            print(text) #imprime
             
     except IOError:
         print("EL documento no se encuentra")
@@ -324,46 +324,49 @@ imprime_usuarios(ficheros)
 
 import random
 
+def decodificador():
 
-digitos = ('0','1','2','3','4','5','6','7','8','9')
+    digitos = ('0','1','2','3','4','5','6','7','8','9') #para que el codigo que toque solo tenga de rango del 0 al 9. Tambien se puede hacer con un list(range(10))
 
 
-codigo = ''
+    codigo = '' #con esto hacemos que toque un codigo
 
-for i in range(3):
-    candidato = random.choice(digitos)
-
-    while candidato in codigo:
+    for i in range(3): #para que tenga un rango de solo 3 digitos.
         candidato = random.choice(digitos)
-    codigo = codigo + candidato
+
+        while candidato in codigo: # para que no toque digitos no repetidos
+            candidato = random.choice(digitos)
+        codigo = codigo + candidato
 
 
-print('\n------------------------------¡Bienvenido al decodificador!------------------------------')
-print ("\nTienes que adivinar un numero de", 3, "cifras distintas")
-propuesta = input("¿Cual es tú apuesta?: ")
+    print('\n------------------------------¡Bienvenido al decodificador!------------------------------')
+
+    propuesta = input("¿Cual es tú apuesta?: ") #este input es para que nosotros pongamos el codigo
 
 
-intentos = 1
-while propuesta != codigo:
-    intentos = intentos + 1
-    aciertos = 0
-    coincidencias = 0
+    intentos = 1
+    while propuesta != codigo: #para ayudar un poco con los aciertos y coincidencias
+        intentos = intentos + 1
+        aciertos = 0
+        coincidencias = 0
 
 
-    for i in range(3):
-        if propuesta[i] == codigo[i]:
-            aciertos = aciertos + 1
-        elif propuesta[i] in codigo:
-            coincidencias = coincidencias + 1
+        for i in range(3):
+            if propuesta[i] == codigo[i]:
+                aciertos = aciertos + 1
+            elif propuesta[i] in codigo:
+                coincidencias = coincidencias + 1
 
-    if coincidencias == 3:
-        print(" ¡Casi!, acertaste los 3 numeros, pero tienes que ordenarlos.")
-    elif coincidencias == 2:
-        print(" ¡Cerca!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta, dentro de poco seras hacker")
-    elif coincidencias == 1:
-        print(" ¡Cerca!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta, dentro de poco seras hacker")
-    elif coincidencias == 0:
-        print(" ¡Nada!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta hazlo de nuevo")
-    propuesta = input("\n¿Cual es tú apuesta?: ")
+        if coincidencias == 3:
+            print(" ¡Casi!, acertaste los 3 numeros, pero tienes que ordenarlos.")
+        elif coincidencias == 2:
+            print(" ¡Cerca!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta, dentro de poco seras hacker")
+        elif coincidencias == 1:
+            print(" ¡Cerca!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta, dentro de poco seras hacker")
+        elif coincidencias == 0:
+            print(" ¡Nada!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta hazlo de nuevo")
+        propuesta = input("\n¿Cual es tú apuesta?: ")
 
-print ("¡Enhorabuena, ahora eres un hacker! ")
+        print ("¡Enhorabuena, ahora eres un hacker! ")
+
+decodificador()

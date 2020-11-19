@@ -37,8 +37,9 @@
 
 import math
 
+# Clase general figura
 class Figura():
-
+    # input para preguntar los datos necesarios para los calculos
     altura = int(input('\nIngresar altura triangulo:'))
     base = int(input('Ingresar base triangulo:'))
     lado1 = int(input('\nIngresar primer lado del triangulo:'))
@@ -74,7 +75,7 @@ class Figura():
     def diametroFigura(self):
        Circulo.diametroFigura(Circulo)
 
-
+# Clase triangulo donde se forma tanto el area como el perimetro
 class Triangulo(Figura):
 
 
@@ -85,6 +86,7 @@ class Triangulo(Figura):
         self.lado2 = lado2
         self.lado3 = lado3
 
+    # Calculo el area y perimetro con sus formulas
     def areaFigura(self):
         print('\n****************Resultados****************')
         print('------------------Área------------------')
@@ -94,23 +96,26 @@ class Triangulo(Figura):
         print('\n------------------Perímetro------------------')
         print('Perimetro triangulo: ',self.lado1 + self.lado2 + self.lado3)
 
+# Clase rectangulo donde se forma tanto el area como el perimetro
 class Rectangulo(Figura):
     def __init__(self, alturaR, baseR):
 
         self.alturaR = alturaR
         self.baseR = baseR
-
+    # Calculo el area y perimetro con sus formulas
     def areaFigura(self):
         print('Area Rectangulo: ', self.baseR * self.alturaR)
 
     def perimetroFigura(self):
         print('Perimetro Rectangulo: ', 2 * self.baseR + 2 * self.alturaR)
 
+# Clase circulo donde se forma tanto el area como el perimetro y el diametro
 class Circulo(Figura):
     def __init__(self, radio):
 
         self.radio = radio
 
+    # Calculo el area, perimetro y diametro con sus formulas
     def areaFigura(self):
         print('Area Circulo: ', 2*math.pi*self.radio**2)
     

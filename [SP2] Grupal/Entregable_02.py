@@ -125,3 +125,104 @@ mydeck=Deck()
 
 # Creo el mazo aleatorio.
 mydeck.create()
+
+#Divido el mazo en 2 partes
+mydeck.split_deck()
+print()
+
+# Le asigno a cada jugador una mitad del mazo aleatorio
+player_1=Player(mydeck.hdeck1,[])
+player_2=Player(mydeck.hdeck2,[])
+
+# El juego esta ON
+game_on= True
+
+# Mientras que todavia el juego esta ON, se juega una mano.
+# Al final se verifican la cantidad de cartas.
+while game_on:
+    input('\nPresiona enter para Jugar una mano ')
+    print('-------------------------------------------')
+    
+    # Se inicializa el stack de guerra y se define la mano.
+    war_stack=[]
+    hand=Hand()
+    
+    # Se juega una mano
+    hand.play(player_1.deck,player_2.deck)
+    print('El Jugador 1 ha jugado: ',hand.p1)
+    print('El jugador 2 ha jugado: ',hand.p2)
+
+    # Si hay igualdad en el valor de las cartas, hay Guerra.
+    if RANKS.index(hand.p1[:-1]) == RANKS.index(hand.p2[:-1]): 
+        war = True
+        while war :
+            print('\nLas cartas tienen el mismo valor!')
+            print('GUERRA!')
+
+            if len(player_1.deck) == len(player_2.deck) >= 3:
+                hand.war(war_stack,player_1.deck,player_2.deck)
+            elif 1 < len(player_1.deck) == len(player_2.deck) < 3 :
+                war_stack.append(hand.p1.pop())
+                war_stack.append(hand.p2.pop())
+                print('\nNo hay suficientes cartas para jugar una guerra normal')
+                print('Se descartara solo una carta')
+                war_stack.append(p1_deck.pop())
+                war_stack.append(p2_deck.pop())
+            elif len(player_1.deck) == len(player_2.deck) == 1 :
+                print('\nNo hay suficientes cartas para jugar una guerra normal!')
+                print('Solo les queda 1 carta a cada uno!')
+                print('No se descartan cartas, se juega solo la siguiente')
+                war_stack.append(hand.p1)
+                war_stack.append(hand.p2)
+
+            input('\nPresiona enter para Jugar ')
+            print('-------------------------------------------')
+            hand.play(player_1.deck,player_2.deck)
+            print('El Jugador 1 ha jugado: ',hand.p1)
+            print('El Jugador 2 ha jugado: ',hand.p2)
+
+            if RANKS.index(hand.p1[:-1]) == RANKS.index(hand.p2[:-1]):
+                print('Las cartas tienen el mismo valor de nuevo!')
+                print('OMG')
+                print('GUERRA!')
+                input('Presiona enter para Jugar')
+                print('-------------------------------------------')
+            else:
+                war= False
+
+            if len(player_1.deck) == len(player_2.deck) == 0 and  war:
+                print('Ya no se puede jugar por falta de cartas!')
+                print('Se descarta el stack de ',len(war_stack),' cartas')
+                break
+
+    # Si no existe guerra verifico quien gano la mano
+    if RANKS.index(hand.p1[:-1]) > RANKS.index(hand.p2[:-1]):
+        print('\nGANO JUGADOR 1')
+        player_1.stack.extend(war_stack)
+        player_1.stack.append(hand.p1)
+        player_1.stack.append(hand.p2)
+    elif RANKS.index(hand.p1[:-1]) < RANKS.index(hand.p2[:-1]):
+        print('\nGANO JUGADOR 2')
+        player_2.stack.extend(war_stack)
+        player_2.stack.append(hand.p1)
+        player_2.stack.append(hand.p2)
+
+    if len(player_1.deck) == len(player_2.deck) == 0:
+        game_on=False
+        print('\nSE HAN TERMINADO LAS CARTAS!')
+        print('EL JUEGO HA TERMINADO')
+        print('-------------------------------------------')
+
+#Finalizo el juego
+input('Presiona enter para contabilizar las cartas y saber el ganador')
+print('\nEl GANADOR ES:')
+
+if len(player_1.stack) > len(player_2.stack):
+    print('JUGADOR 1 con ',len(player_1.stack),' cartas')
+    print('El jugador 2 tenia ',len(player_2.stack),' cartas :(\n')
+elif len(player_1.stack) < len(player_2.stack):
+    print('JUGADOR 2 con ',len(player_2.stack),' cartas')
+    print('El jugador 1 tenia ',len(player_1.stack),' cartas :(\n')
+else:
+    print('\n¡AMBOS JUGADORES TIENEN IGUAL CANTIDAD DE CARTAS!')
+    print('¡ES UN EMPATE!\n')
