@@ -201,7 +201,7 @@ sustituye_patrones("1 me dijo que 0 vendría con 2","sustituciones.txt")
 ficheros = "nombres.txt"
 import re
 
-
+##Funcion que mide las listas
 def is_user_line(list):
     if len(list) == 5 and len(list[0]) == 8:
         return True
@@ -209,7 +209,7 @@ def is_user_line(list):
     else:
         return False
 
-
+##Funcion para los nombres compuestos, juntarlos
 def set_name(nombre1, nombre2):
     if len(nombre2) > 0:
         return nombre1 + ' ' + nombre2
@@ -217,12 +217,12 @@ def set_name(nombre1, nombre2):
     else:
         return nombre1
 
-
+##Funcion para crear el usuario, con las partes del nombre y el apellido
 def set_usernames(users):
     usernames = []
 
     for user in users:
-
+##aquí coges la parte del nombre y el apellido
         nombres = user['nombre'].split(' ')
 
         apellidos = user['apellidos'].split(' ')
@@ -235,7 +235,7 @@ def set_usernames(users):
 
         while username.lower() in usernames:
             numbers = re.findall(r'[0-9]+', username)
-
+##aquí es donde se ve si existe ya un usuario con el nombre que acabas de crear, si es así, le añade un número para diferenciarlo
             if len(numbers) > 0:
                 new_number_name = int(numbers[len(numbers) - 1]) + 1
 
@@ -248,7 +248,7 @@ def set_usernames(users):
 
         user['usuario'] = username.lower()
 
-
+#Funcion para imprimir la lista que pide el ejercicio
 def imprime_usuarios(file):
     users = []
     f = open(file, 'r')
@@ -267,7 +267,7 @@ def imprime_usuarios(file):
             users.append(new_user)
 
     set_usernames(users)
-
+##donde se imprime la plantilla de arriba
     print('DNI      Apellidos                      Nombre          Usuario')
     print('-------- ------------------------------ --------------- --------')
 
