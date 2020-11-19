@@ -5,8 +5,8 @@
 # Segunda práctica
 # ===========================================================
 
-#   APELLIDOS, NOMBRE: Villar Mendez, Carlos Manuel
-#   DNI: 3021661C
+#   APELLIDOS, NOMBRE: Martínez López, Juan Jesús
+#   DNI: 30280475d
 
 # Práctica 2: Programación orientada a objetos
 # =================================
