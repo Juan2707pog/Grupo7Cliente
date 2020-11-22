@@ -110,11 +110,7 @@ def sustituye_patrones(frase, fichero):
     except IOError:
         print("EL documento no se encuentra")
         
-    finally:
-        document.close()
-
-        
-sustituye_patrones("1 me dijo que 0 vendría con 2","sustituciones.txt")
+sustituye_patrones("1 me dijo que 0 vendría con 2","sustituciones.txt") 
 
 # NÃ³tese que:
 # - Supondremos que en la frase de entrada las palabras se separan mediante un
@@ -278,7 +274,18 @@ def imprime_usuarios(file):
 
 
 imprime_usuarios(ficheros)
-
+#############
+              ###mensaje = "hola.txt"
+#with open (mensaje,"r") as f:
+ #   mensaje = f.read()
+  #  espacio = [i for i in mensaje.split(":")]
+   # espacio = "  ".join(espacio)
+    #espacio = espacio.split("\n")
+    #for x in espacio:
+     #       print(x)
+              #
+              #
+              ##
 
 # -----------------------------------------------------------------------------
 # EJERCICIO 3) EL DECODIFICADOR
@@ -332,6 +339,7 @@ def decodificador():
     codigo = '' #con esto hacemos que toque un codigo
 
     for i in range(3): #para que tenga un rango de solo 3 digitos.
+
         candidato = random.choice(digitos)
 
         while candidato in codigo: # para que no toque digitos no repetidos
@@ -344,12 +352,12 @@ def decodificador():
     propuesta = input("¿Cual es tú apuesta?: ") #este input es para que nosotros pongamos el codigo
 
 
+
     intentos = 1
     while propuesta != codigo: #para ayudar un poco con los aciertos y coincidencias
         intentos = intentos + 1
         aciertos = 0
         coincidencias = 0
-
 
         for i in range(3):
             if propuesta[i] == codigo[i]:
