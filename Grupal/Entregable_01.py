@@ -96,16 +96,19 @@
 # Los hijos de Francisco son Jose y Rafael
 
 def sustituye_patrones(frase, fichero):
-    document = open (fichero, 'a')  #abre el archivo
-    tests = [line.rstrip('\n').split(':') for line in document] #el rstrip devuelve una nueva cadena con los espacios en blanco eliminados
+    try:
+        document = open (fichero, 'r') #abre el archivo
+        tests = [line.rstrip('\n').split(':') for line in document] #el rstrip devuelve una nueva cadena con los espacios en blanco eliminados
         
-        for test in tests:  #edita el texto
+        for test in tests: #edita el texto
             text = frase
-            for idx in range (len(test)):   #introduzca un índice
+            for idx in range (len(test)): #introduzca un índice
                 text = text.replace(str(idx), test[idx]) #como queremos q aparezca que reemplace el texto como arrays con separtaciones, comas...
 
-            print(text)      #imprime
-    
+            print(text) #imprime
+            
+    except IOError:
+        print("EL documento no se encuentra")
         
 sustituye_patrones("1 me dijo que 0 vendría con 2","sustituciones.txt") 
 
@@ -194,7 +197,7 @@ sustituye_patrones("1 me dijo que 0 vendría con 2","sustituciones.txt")
 ficheros = "nombres.txt"
 import re
 
-
+##Funcion que mide las listas
 def is_user_line(list):
     if len(list) == 5 and len(list[0]) == 8:
         return True
@@ -202,7 +205,7 @@ def is_user_line(list):
     else:
         return False
 
-
+##Funcion para los nombres compuestos, juntarlos
 def set_name(nombre1, nombre2):
     if len(nombre2) > 0:
         return nombre1 + ' ' + nombre2
@@ -210,12 +213,12 @@ def set_name(nombre1, nombre2):
     else:
         return nombre1
 
-
+##Funcion para crear el usuario, con las partes del nombre y el apellido
 def set_usernames(users):
     usernames = []
 
     for user in users:
-
+##aquí coges la parte del nombre y el apellido
         nombres = user['nombre'].split(' ')
 
         apellidos = user['apellidos'].split(' ')
@@ -228,7 +231,7 @@ def set_usernames(users):
 
         while username.lower() in usernames:
             numbers = re.findall(r'[0-9]+', username)
-
+##aquí es donde se ve si existe ya un usuario con el nombre que acabas de crear, si es así, le añade un número para diferenciarlo
             if len(numbers) > 0:
                 new_number_name = int(numbers[len(numbers) - 1]) + 1
 
@@ -241,7 +244,7 @@ def set_usernames(users):
 
         user['usuario'] = username.lower()
 
-
+#Funcion para imprimir la lista que pide el ejercicio
 def imprime_usuarios(file):
     users = []
     f = open(file, 'r')
@@ -260,7 +263,7 @@ def imprime_usuarios(file):
             users.append(new_user)
 
     set_usernames(users)
-
+##donde se imprime la plantilla de arriba
     print('DNI      Apellidos                      Nombre          Usuario')
     print('-------- ------------------------------ --------------- --------')
 
@@ -328,46 +331,50 @@ imprime_usuarios(ficheros)
 
 import random
 
+def decodificador():
 
-digitos = ('0','1','2','3','4','5','6','7','8','9') #para que el codigo que toque solo tenga de rango del 0 al 9. Tambien se puede hacer con un list(range(10))
+    digitos = ('0','1','2','3','4','5','6','7','8','9') #para que el codigo que toque solo tenga de rango del 0 al 9. Tambien se puede hacer con un list(range(10))
 
 
-codigo = '' #con esto hacemos que toque un codigo
+    codigo = '' #con esto hacemos que toque un codigo
 
-for i in range(3): #para que tenga un rango de solo 3 digitos.
-    candidato = random.choice(digitos)
-                                            
-    while candidato in codigo:  # para que no toque digitos no repetidos
+    for i in range(3): #para que tenga un rango de solo 3 digitos.
+
         candidato = random.choice(digitos)
-    codigo = codigo + candidato
+
+        while candidato in codigo: # para que no toque digitos no repetidos
+            candidato = random.choice(digitos)
+        codigo = codigo + candidato
 
 
-print('\n------------------------------¡Bienvenido al decodificador!------------------------------\n')
-              
-propuesta = input("¿Cual es tú apuesta?: ") #este input es para que nosotros pongamos el codigo
+    print('\n------------------------------¡Bienvenido al decodificador!------------------------------')
+
+    propuesta = input("¿Cual es tú apuesta?: ") #este input es para que nosotros pongamos el codigo
 
 
-intentos = 1
-while propuesta != codigo: #para ayudar un poco con los aciertos y coincidencias
-    intentos = intentos + 1
-    aciertos = 0
-    coincidencias = 0
 
+    intentos = 1
+    while propuesta != codigo: #para ayudar un poco con los aciertos y coincidencias
+        intentos = intentos + 1
+        aciertos = 0
+        coincidencias = 0
 
-    for i in range(3):
-        if propuesta[i] == codigo[i]:
-            aciertos = aciertos + 1
-        elif propuesta[i] in codigo:
-            coincidencias = coincidencias + 1
+        for i in range(3):
+            if propuesta[i] == codigo[i]:
+                aciertos = aciertos + 1
+            elif propuesta[i] in codigo:
+                coincidencias = coincidencias + 1
 
-    if coincidencias == 3:
-        print(" ¡Casi!, acertaste los 3 numeros, pero tienes que ordenarlos.")
-    elif coincidencias == 2:
-        print(" ¡Cerca!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta, dentro de poco seras hacker")
-    elif coincidencias == 1:
-        print(" ¡Cerca!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta, dentro de poco seras hacker")
-    elif coincidencias == 0:
-        print(" ¡Nada!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta hazlo de nuevo")
-    propuesta = input("\n¿Cual es tú apuesta?: ")
+        if coincidencias == 3:
+            print(" ¡Casi!, acertaste los 3 numeros, pero tienes que ordenarlos.")
+        elif coincidencias == 2:
+            print(" ¡Cerca!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta, dentro de poco seras hacker")
+        elif coincidencias == 1:
+            print(" ¡Cerca!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta, dentro de poco seras hacker")
+        elif coincidencias == 0:
+            print(" ¡Nada!, tienes ", coincidencias ,"coincidencias y", aciertos ,"en la posicion correcta hazlo de nuevo")
+        propuesta = input("\n¿Cual es tú apuesta?: ")
 
-print ("¡Enhorabuena, ahora eres un hacker! ")
+        print ("¡Enhorabuena, ahora eres un hacker! ")
+
+decodificador()
