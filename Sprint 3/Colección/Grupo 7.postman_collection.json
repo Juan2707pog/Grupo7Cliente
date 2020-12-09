@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "1d01d5a7-5f37-4957-91a4-d73819b820f1",
+		"name": "Grupo 7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[GET] Pokemon",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/charizard",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						"charizard"
+					]
+				},
+				"description": "Peticion get del pokemon charizard"
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Cartas de pokemon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokemontcg.io/cards?name=charizard",
+					"protocol": "https",
+					"host": [
+						"pokemontcg",
+						"io"
+					],
+					"path": [
+						"cards"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "charizard"
+						}
+					]
+				},
+				"description": "Aqui se hace una peticion GET"
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] Comic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "/search/?q=super",
+							"type": "text"
+						},
+						{
+							"key": "params[TrackingBundle][page_type]",
+							"value": "search_results",
+							"type": "text"
+						},
+						{
+							"key": "signature[pjs]",
+							"value": "false",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "https://comicvine.gamespot.com/postRender",
+					"protocol": "https",
+					"host": [
+						"comicvine",
+						"gamespot",
+						"com"
+					],
+					"path": [
+						"postRender"
+					]
+				},
+				"description": "[POST] Comic"
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE] Trello",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://trello.com/1/Boards/iTkltqTH?lists=open&list_fields=name%2Cclosed%2CidBoard%2Cpos%2Csubscribed%2Climits%2CcreationMethod%2CsoftLimit&cards=visible&card_attachments=cover&card_stickers=true&card_fields=badges%2CcardRole%2Cclosed%2CdateLastActivity%2Cdesc%2CdescData%2Cdue%2CdueComplete%2CdueReminder%2CidAttachmentCover%2CidList%2CidBoard%2CidMembers%2CidShort%2CidLabels%2Climits%2Cname%2Cpos%2CshortUrl%2CshortLink%2Csubscribed%2Curl%2ClocationName%2Caddress%2Ccoordinates%2Ccover%2CisTemplate%2Cstart%2Clabels&card_checklists=none&enterprise=true&enterprise_fields=displayName&members=all&member_fields=activityBlocked%2CavatarUrl%2Cbio%2CbioData%2Cconfirmed%2CfullName%2CidEnterprise%2CidMemberReferrer%2Cinitials%2CmemberType%2CnonPublic%2Cproducts%2Curl%2Cusername&membersInvited=all&membersInvited_fields=activityBlocked%2CavatarUrl%2Cbio%2CbioData%2Cconfirmed%2CfullName%2CidEnterprise%2CidMemberReferrer%2Cinitials%2CmemberType%2CnonPublic%2Cproducts%2Curl%2Cusername&memberships_orgMemberType=true&checklists=none&organization=true&organization_fields=name%2CdisplayName%2Cdesc%2CdescData%2Curl%2Cwebsite%2Cprefs%2Cmemberships%2ClogoHash%2Cproducts%2Climits%2CidEnterprise&organization_tags=true&organization_enterprise=true&organization_disable_mock=true&myPrefs=true&fields=name%2Cclosed%2CdateLastActivity%2CdateLastView%2CdatePluginDisable%2CenterpriseOwned%2CidOrganization%2Cprefs%2CpremiumFeatures%2CshortLink%2CshortUrl%2Curl%2CcreationMethod%2CidEnterprise%2Cdesc%2CdescData%2CidTags%2Cinvitations%2Cinvited%2ClabelNames%2Climits%2Cmemberships%2CpowerUps%2Csubscribed%2CtemplateGallery&pluginData=true&organization_pluginData=true&boardPlugins=true&key=1a9c6e496379cbcedd4220b16dff40dc&token=1a4357138dd8426be2b5d90e963de1d4d128e6e6f090ba02c82151f73cedb638",
+					"protocol": "https",
+					"host": [
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"Boards",
+						"iTkltqTH"
+					],
+					"query": [
+						{
+							"key": "lists",
+							"value": "open"
+						},
+						{
+							"key": "list_fields",
+							"value": "name%2Cclosed%2CidBoard%2Cpos%2Csubscribed%2Climits%2CcreationMethod%2CsoftLimit"
+						},
+						{
+							"key": "cards",
+							"value": "visible"
+						},
+						{
+							"key": "card_attachments",
+							"value": "cover"
+						},
+						{
+							"key": "card_stickers",
+							"value": "true"
+						},
+						{
+							"key": "card_fields",
+							"value": "badges%2CcardRole%2Cclosed%2CdateLastActivity%2Cdesc%2CdescData%2Cdue%2CdueComplete%2CdueReminder%2CidAttachmentCover%2CidList%2CidBoard%2CidMembers%2CidShort%2CidLabels%2Climits%2Cname%2Cpos%2CshortUrl%2CshortLink%2Csubscribed%2Curl%2ClocationName%2Caddress%2Ccoordinates%2Ccover%2CisTemplate%2Cstart%2Clabels"
+						},
+						{
+							"key": "card_checklists",
+							"value": "none"
+						},
+						{
+							"key": "enterprise",
+							"value": "true"
+						},
+						{
+							"key": "enterprise_fields",
+							"value": "displayName"
+						},
+						{
+							"key": "members",
+							"value": "all"
+						},
+						{
+							"key": "member_fields",
+							"value": "activityBlocked%2CavatarUrl%2Cbio%2CbioData%2Cconfirmed%2CfullName%2CidEnterprise%2CidMemberReferrer%2Cinitials%2CmemberType%2CnonPublic%2Cproducts%2Curl%2Cusername"
+						},
+						{
+							"key": "membersInvited",
+							"value": "all"
+						},
+						{
+							"key": "membersInvited_fields",
+							"value": "activityBlocked%2CavatarUrl%2Cbio%2CbioData%2Cconfirmed%2CfullName%2CidEnterprise%2CidMemberReferrer%2Cinitials%2CmemberType%2CnonPublic%2Cproducts%2Curl%2Cusername"
+						},
+						{
+							"key": "memberships_orgMemberType",
+							"value": "true"
+						},
+						{
+							"key": "checklists",
+							"value": "none"
+						},
+						{
+							"key": "organization",
+							"value": "true"
+						},
+						{
+							"key": "organization_fields",
+							"value": "name%2CdisplayName%2Cdesc%2CdescData%2Curl%2Cwebsite%2Cprefs%2Cmemberships%2ClogoHash%2Cproducts%2Climits%2CidEnterprise"
+						},
+						{
+							"key": "organization_tags",
+							"value": "true"
+						},
+						{
+							"key": "organization_enterprise",
+							"value": "true"
+						},
+						{
+							"key": "organization_disable_mock",
+							"value": "true"
+						},
+						{
+							"key": "myPrefs",
+							"value": "true"
+						},
+						{
+							"key": "fields",
+							"value": "name%2Cclosed%2CdateLastActivity%2CdateLastView%2CdatePluginDisable%2CenterpriseOwned%2CidOrganization%2Cprefs%2CpremiumFeatures%2CshortLink%2CshortUrl%2Curl%2CcreationMethod%2CidEnterprise%2Cdesc%2CdescData%2CidTags%2Cinvitations%2Cinvited%2ClabelNames%2Climits%2Cmemberships%2CpowerUps%2Csubscribed%2CtemplateGallery"
+						},
+						{
+							"key": "pluginData",
+							"value": "true"
+						},
+						{
+							"key": "organization_pluginData",
+							"value": "true"
+						},
+						{
+							"key": "boardPlugins",
+							"value": "true"
+						},
+						{
+							"key": "key",
+							"value": "1a9c6e496379cbcedd4220b16dff40dc"
+						},
+						{
+							"key": "token",
+							"value": "1a4357138dd8426be2b5d90e963de1d4d128e6e6f090ba02c82151f73cedb638"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] Cocteles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title=3&name=3",
+							"value": "",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "https://www.thecocktaildb.com/browse.php?s=apple",
+					"protocol": "https",
+					"host": [
+						"www",
+						"thecocktaildb",
+						"com"
+					],
+					"path": [
+						"browse.php"
+					],
+					"query": [
+						{
+							"key": "s",
+							"value": "apple"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[PUT] Trello2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"actualizo desde postman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://trello.com/1/boards/5fc7ed1c556e966ccf4e6625?key=fc9366fabefbb6664285a6b68cfaec95&token=fc8f8bca5790ecaa190c1d829c72d4e2d059b4aa9887dc8051eedecfd271702f",
+					"protocol": "https",
+					"host": [
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						"5fc7ed1c556e966ccf4e6625"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "fc9366fabefbb6664285a6b68cfaec95"
+						},
+						{
+							"key": "token",
+							"value": "fc8f8bca5790ecaa190c1d829c72d4e2d059b4aa9887dc8051eedecfd271702f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[PUT] Spotify",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"public\": false\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://api.spotify.com/v1/playlists/30zRLWYrwdzk1kEHEM9nYF/followers",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"playlists",
+						"30zRLWYrwdzk1kEHEM9nYF",
+						"followers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE] Gitter",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://gitter.im/api/v1/rooms/5fc8fe66d73408ce4ff59c54",
+					"protocol": "https",
+					"host": [
+						"gitter",
+						"im"
+					],
+					"path": [
+						"api",
+						"v1",
+						"rooms",
+						"5fc8fe66d73408ce4ff59c54"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
