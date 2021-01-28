@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+</head>
+
+<body>
+    <div id="app" class="container my-3">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="mb-3">Upload Image</h1>
+          </div>
+          <div class="col-md-5 offset-md-1">
+            <h3>Subir Imagen</h5>
+            <form>
+              <div class="form-group">
+                <label for="my-file">Elegir Imagen</label>
+                <input type="file" accept="image/*" @change="previewImage" class="form-control-file" id="my-file">
+              </div>
+            </form>
+          </div>
+          <div class="w-100"></div>
+        </div>
+      </div>
+</body>
+
+</html>
