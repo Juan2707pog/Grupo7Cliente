@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuracion</title>
+    <style>
+        body,
+        html {
+            display: table;
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: 'open sans';
+            font-size: 12px;
+            position: absolute;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .button {
+            display: inline-block;
+            font-size: 11px;
+            padding: 10px 10px;
+            border: none;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            color: #fff;
+            background-color: #66c1de;
+            text-transform: uppercase;
+            font-family: 'open sans';
+            font-weight: 600;
+            text-align: center;
+        }
+
+        div#left-content,
+        div#main-content {
+            height: 100% !important;
+            min-height: 100%;
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        div#left-content {
+            width: 200px;
+            max-width: 250px;
+            background-color: #333645;
+        }
+
+        div#left-content div#user-panel {
+            position: relative;
+            background-color: #f3565d;
+            padding: 20px 10px;
+            margin-bottom: 20px;
+        }
+
+        div#left-content div#user-panel div.logout {
+            display: none;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            margin-top: -8px;
+        }
+
+        div#left-content div#lists-names div#lists-container div.list,
+        div#main-content div#tasks-list-container ul#tasks-list li {
+            padding: 20px 10px;
+            color: #a4a4a4;
+            position: relative;
+        }
+
+        div#left-content div#lists-names div#lists-container a:hover div.list {
+            background-color: #1e202c;
+            color: #FFF;
+        }
+
+        div#left-content div#lists-names a.button {
+            display: block;
+            margin: 10px;
+        }
+
+        div#main-content header,
+        div#main-content div#new-task {
+            background-color: #FFF;
+            padding: 20px 20px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="left-content">
+        <div id="user-panel">
+
+            <div class="logout">
+                <a href=""><img src="" alt="Logout" /></a>
+            </div>
+        </div>
+        <div id="lists-names">
+            <a href="#" class="button">Editar Perfil</a>
+            <div id="lists-container">
+                <a href="#">
+                    <div class="list">
+                        <div class="name">Cambiar Contraseña</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="list">
+                        <div class="name">Aplicaciones y Sitio Web</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="list">
+                        <div class="name">E-mail y SMS</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="list">
+                        <div class="name">Notificaciones</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="list">
+                        <div class="name">Administrar Contactos</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="list">
+                        <div class="name">Privacidad y Seguridad</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="main-content">
+
+        <div id="new-task">
+            <form method="post" action="#">
+                <div id="new-task-form">
+
+                </div>
+            </form>
+        </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
