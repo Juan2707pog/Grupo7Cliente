@@ -18,13 +18,12 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('RedSocial/', include('RedSocial.urls')),
-    path('/login', include('RedSocial.urls')),
-    path('/register', include('RedSocial.urls')),
-    path('/header', include('RedSocial.urls')),
-    path('/config', include('RedSocial.urls')),
-    path('/post', include('RedSocial.urls')),
-    path('/chat', include('RedSocial.urls')),
-    path('/info', include('RedSocial.urls')),
-    path('/feed', include('RedSocial.urls')),
+    path('login/', include('login.urls')),
+    path('register/', include('register.urls')),
+    path('header/', include('header.urls')),
+    path('config/', include('config.urls')),
+    path('post/', include('post.urls')),
+    path('chat/', include('chat.urls')),
+    path('info/', include('info1.urls')),
+    path('feed/', include('feed.urls')),
 ]
