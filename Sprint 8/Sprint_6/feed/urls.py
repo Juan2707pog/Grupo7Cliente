@@ -1,7 +1,8 @@
 from django.urls import path  
-from . import views  
+from .views import feed_details, feed_list
 
 
 urlpatterns = [     
-path('', views.users),
+path('', feed_list),
+path('<slug:value>/', feed_details),
 ]

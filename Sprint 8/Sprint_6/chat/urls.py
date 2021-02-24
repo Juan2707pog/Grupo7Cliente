@@ -1,7 +1,8 @@
 from django.urls import path  
-from . import views  
+from .views import chat_details, chat_list
 
 
 urlpatterns = [     
-path('', views.chatuser),
+path('', chat_list),
+path('<slug:value>/', chat_details),
 ]

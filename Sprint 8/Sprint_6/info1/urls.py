@@ -1,7 +1,8 @@
 from django.urls import path  
-from . import views  
+from .views import info_details, info_list
 
 
 urlpatterns = [     
-path('', views.infouser),
+path('', info_list),
+path('<slug:value>/', info_details),
 ]
