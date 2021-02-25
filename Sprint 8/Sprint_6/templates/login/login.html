@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: rgb(213, 209, 209);
+        }
+
+        form {
+            display: block;
+            height: 500px;
+            width: 400px;
+            margin: 50px auto;
+            border: 1px solid rgb(182, 182, 182);
+            padding: 50px;
+            text-align: center;
+            background: white;
+            position: relative;
+        }
+
+        form::before {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-left: 1px solid rgb(182, 182, 182);
+            border-top: 1px solid rgb(182, 182, 182);
+            position: absolute;
+            top: -20px;
+            left: calc(50% - 20px);
+            background: white;
+            transform: rotate(45deg);
+        }
+
+        form h1 {
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        form input,
+        form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            resize: none;
+            padding: 10px 5px;
+        }
+
+        form input[type="submit"] {
+            background: black;
+            color: white;
+            text-transform: uppercase;
+            border: none;
+            transition: all 1s;
+        }
+
+        form input[type="submit"]:hover {
+            background: white;
+            color: black;
+            text-transform: uppercase;
+            border: 2px solid black;
+            font-size: 20px;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            border: 2px solid black;
+            box-shadow: 0 0 1px 1px rgb(189, 189, 189);
+        }
+
+        form ::placeholder {
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" name="registerForm">
+        <h1>Iniciar sesion</h1>
+        <input type="text" name="name" placeholder="Usuario" />
+        <input type="password" name="pwd" placeholder=" Contarseña" />
+        <input type="submit" value="Iniciar Sesion" />
+    </form>
+</body>
+
+</html>
