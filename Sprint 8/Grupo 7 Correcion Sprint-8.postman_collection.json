@@ -1,0 +1,561 @@
+{
+	"info": {
+		"_postman_id": "de6eb339-0670-428c-b9cb-afaccbd3cf0a",
+		"name": "Grupo 7 Correcion Sprint-8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get 1 chat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/chat/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 1 feed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/feed/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"feed",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 1 info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/info/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"info",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 2 Chat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/chat/Carlos/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"Carlos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post 1 Info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nick_name\": \"vladi\",\r\n        \"arroba\": \"@elruso\",\r\n        \"biography\": \"hola a todos\",\r\n        \"followers\": \"12\",\r\n        \"followeds\": \"14\",\r\n        \"publications\": \"2\",\r\n        \"url\": \"https://steamcommunity.com/sharedfiles/filedetails/?id=2035555250\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/info/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"info",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 2 Feed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"first_name\": \"Carlos\",\r\n        \"last_name\": \"villar\",\r\n        \"email\": \"willyrex@gmail.com\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/feed/Juan/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"feed",
+						"Juan",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 2 Info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"first_name\": \"Carlos\",\r\n        \"last_name\": \"villar\",\r\n        \"email\": \"willyrex@gmail.com\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/info/laura/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"info",
+						"laura",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post 1 feed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"first_name\": \"ana\",\r\n        \"last_name\": \"bohueles\",\r\n        \"email\": \"ana@gmail.com\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/feed/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"feed",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete 1 feed",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"first_name\": \"ana\",\r\n        \"last_name\": \"bohueles\",\r\n        \"email\": \"ana@gmail.com\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/feed/ana/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"feed",
+						"ana",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete 1 info",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"first_name\": \"ana\",\r\n        \"last_name\": \"bohueles\",\r\n        \"email\": \"ana@gmail.com\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/info/Alberto/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"info",
+						"Alberto",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete 2 info",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"first_name\": \"ana\",\r\n        \"last_name\": \"bohueles\",\r\n        \"email\": \"ana@gmail.com\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/info/Carlos/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"info",
+						"Carlos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete 1 chat",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"first_name\": \"ana\",\r\n        \"last_name\": \"bohueles\",\r\n        \"email\": \"ana@gmail.com\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/chat/laura/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"laura",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put 1 feed",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"first_name\": \"Carlos\",\r\n        \"last_name\": \"mendez\",\r\n        \"email\": \"willyrex@gmail.com\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/feed/Carlos/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"feed",
+						"Carlos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put 1 info",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nick_name\": \"laura\",\r\n        \"arroba\": \"garcia\",\r\n        \"biography\": \"treinta y cuatro\",\r\n        \"followers\": \"69\",\r\n        \"followeds\": \"14\",\r\n        \"publications\": \"2\",\r\n        \"url\": \"https://steamcommunity.com/sharedfiles/filedetails/?id=2006844351\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/info/laura/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"info",
+						"laura",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 3 chat",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"first_name\": \"alvaro\",\r\n        \"last_name\": \"fernandez\",\r\n        \"asd\": {\r\n            \"nick_name\": \"alvaro\",\r\n            \"arroba\": \"@alvarito\",\r\n            \"biography\": \"biba el beti\",\r\n            \"followers\": \"12\",\r\n            \"followeds\": \"70\",\r\n            \"publications\": \"71\",\r\n            \"url\": \"https://steamcommunity.com/sharedfiles/filedetails/?id=2035555250\"\r\n        }\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/chat/rafa/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"rafa",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post 2 info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nick_name\": \"willyex\",\r\n    \"arroba\": \"@suprimo\",\r\n    \"biography\": \"treinta y cuatro\",\r\n    \"followers\": \"59\",\r\n    \"followeds\": \"24\",\r\n    \"publications\": \"12\",\r\n    \"url\": \"https://steamcommunity.com/sharedfiles/filedetails/?id=2006812431\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/info/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"info",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 3 info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nick_name\": \"willyex\",\r\n    \"arroba\": \"@suprimo\",\r\n    \"biography\": \"treinta y cuatro\",\r\n    \"followers\": \"59\",\r\n    \"followeds\": \"24\",\r\n    \"publications\": \"12\",\r\n    \"url\": \"https://steamcommunity.com/sharedfiles/filedetails/?id=2006812431\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/info/willyex/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"info",
+						"willyex",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post 2 feed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"first_name\": \"hola\",\r\n        \"last_name\": \"adios\",\r\n        \"email\": \"hola@gmail.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/feed/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"feed",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put 2 info",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nick_name\": \"ricardo\",\r\n        \"arroba\": \"@ocmaster\",\r\n        \"biography\": \"biba el cadi\",\r\n        \"followers\": \"12\",\r\n        \"followeds\": \"70\",\r\n        \"publications\": \"71\",\r\n        \"url\": \"https://steamcommunity.com/sharedfiles/filedetails/?id=2035555250\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/info/ricardo/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"info",
+						"ricardo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 4 chat",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"first_name\": \"messi\",\r\n        \"last_name\": \"ocmaster\",\r\n        \"asd\": {\r\n            \"nick_name\": \"messi\",\r\n            \"arroba\": \"@ocmaster\",\r\n            \"biography\": \"biba el cadi\",\r\n            \"followers\": \"12\",\r\n            \"followeds\": \"70\",\r\n            \"publications\": \"71\",\r\n            \"url\": \"https://steamcommunity.com/sharedfiles/filedetails/?id=2035555250\"\r\n        }\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/chat/ricardo/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"chat",
+						"ricardo",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
