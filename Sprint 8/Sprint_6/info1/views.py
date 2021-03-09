@@ -12,16 +12,29 @@ from .serializers import info1Serializer
 def info_list(request):
 
     if request.method == 'GET':
-        users = Infoinsta.objects.all()
-        serializer = info1Serializer(users, many=True)
-        return JsonResponse(serializer.data, safe=False, status=200)
+        try:
+            users = Infoinsta.objects.all()
+            serializer = info1Serializer(users, many=True)
+            return JsonResponse(serializer.data, safe=False, status=200)
+
+        except:
+            if Infoinsta.objects.DoesNotExist:
+                return HttpResponse(status=404)
+            else:
+                return HttpResponse(status=500)
+
     elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = info1Serializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=204)
+        try:
+            data = JSONParser().parse(request)
+            serializer = info1Serializer(data=data)
+            if serializer.is_valid():
+                serializer.save()
+                return JsonResponse(serializer.data, status=201)
+            return JsonResponse(serializer.errors, status=204)
+        except:
+            if not serializer.is_valid():
+                return HttpResponse(status=400)
+            return HttpResponse(status=500)
 
 @csrf_exempt
 def info_details(request, value):
@@ -33,17 +46,26 @@ def info_details(request, value):
 
     #Consultar
     if request.method == 'GET':
-        serializer = info1Serializer(user)
-        return JsonResponse(serializer.data, safe=False, status=200)
+        try:
+            serializer = info1Serializer(user)
+            return JsonResponse(serializer.data, safe=False, status=200)
+        except:
+            return HttpResponse(Exception, status=400)
 
     #Modificar
     elif request.method == 'PUT':
-        data = JSONParser().parse(request)
-        serializer = info1Serializer(user, data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=200)
-        return JsonResponse(serializer.errors, status=204)
+        try:
+            data = JSONParser().parse(request)
+            serializer = info1Serializer(user, data=data)
+            if serializer.is_valid():
+                serializer.save()
+                return JsonResponse(serializer.data, status=200)
+            return JsonResponse(serializer.errors, status=204)
+        except:
+            if not serializer.is_valid:
+                return HttpResponse(status=400)
+            else:
+                return HttpResponse(status=500)
 
     #Eliminar
     elif request.method == 'DELETE':

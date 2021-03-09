@@ -13,16 +13,31 @@ from .serializers import FeedSerializer
 def feed_list(request):
 
     if request.method == 'GET':
-        feed_users = User.objects.all()
-        serializer = FeedSerializer(feed_users, many=True)
-        return JsonResponse(serializer.data, safe=False, status=200)
+        try:
+            feed_users = User.objects.all()
+            serializer = FeedSerializer(feed_users, many=True)
+            return JsonResponse(serializer.data, safe=False, status=200)
+
+        except:
+            if User.objects.DoesNotExist:
+                return HttpResponse(status=404)
+            else:
+                return HttpResponse(status=500)
+
     elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = FeedSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=204)
+        try:
+            data = JSONParser().parse(request)
+            serializer = FeedSerializer(data=data)
+            if serializer.is_valid():
+                serializer.save()
+                return JsonResponse(serializer.data, status=201)
+            return JsonResponse(serializer.errors, status=204)
+        
+        except:
+            if not serializer.is_valid():
+                return HttpResponse(status=404)
+
+            return HttpResponse(status=500)
 
 @csrf_exempt
 def feed_details(request, value):
@@ -34,17 +49,27 @@ def feed_details(request, value):
 
     #Consultar
     if request.method == 'GET':
-        serializer = FeedSerializer(feed_user)
-        return JsonResponse(serializer.data, safe=False, status=200)
+        try:
+            serializer = FeedSerializer(feed_user)
+            return JsonResponse(serializer.data, safe=False, status=200)
+        except:
+            return HttpResponse(Exception, status=400)
 
     #Modificar
     elif request.method == 'PUT':
-        data = JSONParser().parse(request)
-        serializer = FeedSerializer(feed_user, data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=200)
-        return JsonResponse(serializer.errors, status=204)
+        try:
+            data = JSONParser().parse(request)
+            serializer = FeedSerializer(feed_user, data=data)
+            if serializer.is_valid():
+                serializer.save()
+                return JsonResponse(serializer.data, status=200)
+            return JsonResponse(serializer.errors, status=204)
+
+        except:
+            if not serializer.is_valid:
+                return HttpResponse(status=400)
+            else:
+                return HttpResponse(status=500)
 
     #Eliminar
     elif request.method == 'DELETE':
